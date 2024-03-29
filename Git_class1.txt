@@ -1,0 +1,800 @@
+login as: nirmal
+nirmal@192.168.79.139's password:
+Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 5.15.0-101-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+  System information as of Fri Mar 22 02:56:04 PM UTC 2024
+
+  System load:  0.0068359375      Processes:               215
+  Usage of /:   29.9% of 9.75GB   Users logged in:         1
+  Memory usage: 7%                IPv4 address for ens192: 192.168.79.139
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+11 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Fri Mar 22 13:38:48 2024 from 192.168.79.1
+nirmal@nirmal:~$ sudo su
+[sudo] password for nirmal:
+root@nirmal:/home/nirmal# ls
+git-demp
+root@nirmal:/home/nirmal# cd git-demp/
+root@nirmal:/home/nirmal/git-demp# ls
+myproject
+root@nirmal:/home/nirmal/git-demp# cd myproject/
+root@nirmal:/home/nirmal/git-demp/myproject# ls
+index1.html
+root@nirmal:/home/nirmal/git-demp/myproject# git init status
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/nirmal/git-demp/myproject/status/.git/
+root@nirmal:/home/nirmal/git-demp/myproject# cd
+root@nirmal:~# sudo apt remove git
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  git-man liberror-perl
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  git ubuntu-server
+0 upgraded, 0 newly installed, 2 to remove and 10 not upgraded.
+After this operation, 19.0 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 74591 files and directories currently installed.)
+Removing ubuntu-server (1.481.1) ...
+Removing git (1:2.34.1-1ubuntu1.10) ...
+root@nirmal:~# git --version
+bash: /usr/bin/git: No such file or directory
+root@nirmal:~# sudo apt install git
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+The following NEW packages will be installed:
+  git
+0 upgraded, 1 newly installed, 0 to remove and 10 not upgraded.
+Need to get 3,166 kB of archives.
+After this operation, 18.9 MB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git amd64 1:2.34.1-1ubuntu1.10 [3,166 kB]
+Fetched 3,166 kB in 3s (1,164 kB/s)
+Selecting previously unselected package git.
+(Reading database ... 73796 files and directories currently installed.)
+Preparing to unpack .../git_1%3a2.34.1-1ubuntu1.10_amd64.deb ...
+Unpacking git (1:2.34.1-1ubuntu1.10) ...
+Setting up git (1:2.34.1-1ubuntu1.10) ...
+Scanning processes...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@nirmal:~# git --version
+git version 2.34.1
+root@nirmal:~# ls
+snap
+root@nirmal:~# mkdir git-temp
+root@nirmal:~# mkdir /git-temp/myproject
+mkdir: cannot create directory ‘/git-temp/myproject’: No such file or directory
+root@nirmal:~# ls
+git-temp  snap
+root@nirmal:~# cd git-temp/
+root@nirmal:~/git-temp# mkdir myproject
+root@nirmal:~/git-temp# cd myproject/
+root@nirmal:~/git-temp/myproject# git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /root/git-temp/myproject/.git/
+root@nirmal:~/git-temp/myproject# ll ls
+ls: cannot access 'ls': No such file or directory
+root@nirmal:~/git-temp/myproject# ll
+total 12
+drwxr-xr-x 3 root root 4096 Mar 22 15:07 ./
+drwxr-xr-x 3 root root 4096 Mar 22 15:06 ../
+drwxr-xr-x 7 root root 4096 Mar 22 15:07 .git/
+root@nirmal:~/git-temp/myproject# nano index1.html
+root@nirmal:~/git-temp/myproject# git add index1.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index1.html
+
+root@nirmal:~/git-temp/myproject# git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'root@nirmal.(none)')
+root@nirmal:~/git-temp/myproject# git config --global user.name "nirmal"
+root@nirmal:~/git-temp/myproject# git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'root@nirmal.(none)')
+root@nirmal:~/git-temp/myproject# git config --global user.email "jvnkumarofficial1993@gmail.com"
+root@nirmal:~/git-temp/myproject# git commit -m "first commit"
+[master (root-commit) 92719e8] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index1.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# ls
+index1.html
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+root@nirmal:~/git-temp/myproject# nano index2.html
+root@nirmal:~/git-temp/myproject# ls
+index1.html  index2.html
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index2.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git add index2.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   index2.html
+
+root@nirmal:~/git-temp/myproject# git commit -m "second file"
+[master 228459c] second file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index2.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+index2.html
+root@nirmal:~/git-temp/myproject# git log
+commit 228459c13e062c2af80eb3890fa56f4a3eaece2e (HEAD -> master)
+Author: nirmal <jvnkumarofficial1993@gmail.com>
+Date:   Tue Mar 26 03:58:49 2024 +0000
+
+    second file
+
+commit 92719e83d2e91ca9f3c0b61dc62755be8841c52a
+Author: nirmal <jvnkumarofficial1993@gmail.com>
+Date:   Tue Mar 26 03:53:06 2024 +0000
+
+    first commit
+root@nirmal:~/git-temp/myproject# git log -oneline
+fatal: unrecognized argument: -oneline
+root@nirmal:~/git-temp/myproject# git log --oneline
+228459c (HEAD -> master) second file
+92719e8 first commit
+root@nirmal:~/git-temp/myproject# nano index1.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index1.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@nirmal:~/git-temp/myproject# git commit -a -m "modified first file"
+[master a2573fa] modified first file
+ 1 file changed, 1 insertion(+)
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# git log --oneline
+a2573fa (HEAD -> master) modified first file
+228459c second file
+92719e8 first commit
+root@nirmal:~/git-temp/myproject# nano simple.txt
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        simple.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git add simple.txt
+root@nirmal:~/git-temp/myproject# git diff simple.txt
+root@nirmal:~/git-temp/myproject# git diff -staged simple.txt
+error: invalid option: -staged
+root@nirmal:~/git-temp/myproject# git diff --staged simple.txt
+diff --git a/simple.txt b/simple.txt
+new file mode 100644
+index 0000000..26cf6f0
+--- /dev/null
++++ b/simple.txt
+@@ -0,0 +1 @@
++This is my first text file
+root@nirmal:~/git-temp/myproject# git commit -m "First text file"
+[master 75a5406] First text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 simple.txt
+root@nirmal:~/git-temp/myproject# git diff --staged simple.txt
+root@nirmal:~/git-temp/myproject# git rm simple.txt
+rm 'simple.txt'
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    simple.txt
+
+root@nirmal:~/git-temp/myproject# git ls
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+index2.html
+root@nirmal:~/git-temp/myproject# git commit -m "Delete txt"
+[master 557e44e] Delete txt
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 simple.txt
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# git rm --cached index2.html
+rm 'index2.html'
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    index2.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index2.html
+
+root@nirmal:~/git-temp/myproject# git commit -m "Remove txt"
+[master 9acc1b6] Remove txt
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 index2.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index2.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git commit -a -m "Remove txt"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index2.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index2.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# rm index2.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# history
+    1  vim index1.html
+    2  nano index1.html
+    3  git status
+    4  git add index1.html
+    5  git status
+    6  git commit -m "first commit"
+    7  git status
+    8  git commit -m index1.html
+    9  sudo apt rm git
+   10  git log
+   11  cd
+   12  ping google.com
+   13  ls
+   14  cd git-demp/
+   15  ls
+   16  cd myproject/
+   17  ls
+   18  git init status
+   19  cd
+   20  sudo apt remove git
+   21  git --version
+   22  sudo apt install git
+   23  git --version
+   24  ls
+   25  mkdir git-temp
+   26  mkdir /git-temp/myproject
+   27  ls
+   28  cd git-temp/
+   29  mkdir myproject
+   30  cd myproject/
+   31  git init
+   32  ll ls
+   33  ll
+   34  nano index1.html
+   35  git add index1.html
+   36  git status
+   37  git commit -m "first commit"
+   38  git config --global user.name "nirmal"
+   39  git commit -m "first commit"
+   40  git config --global user.email "jvnkumarofficial1993@gmail.com"
+   41  git commit -m "first commit"
+   42  git status
+   43  ls
+   44  git ls-files
+   45  nano index2.html
+   46  ls
+   47  git ls-files
+   48  git status
+   49  git add index2.html
+   50  git status
+   51  git commit -m "second file"
+   52  git status
+   53  git ls-files
+   54  git log
+   55  git log -oneline
+   56  git log --oneline
+   57  nano index1.html
+   58  git status
+   59  git commit -a -m "modified first file"
+   60  git status
+   61  git log --oneline
+   62  nano simple.txt
+   63  git status
+   64  git add simple.txt
+   65  git diff simple.txt
+   66  git diff -staged simple.txt
+   67  git diff --staged simple.txt
+   68  git commit -m "First text file"
+   69  git diff --staged simple.txt
+   70  git rm simple.txt
+   71  git status
+   72  git ls
+   73  git ls-files
+   74  git commit -m "Delete txt"
+   75  git status
+   76  git rm --cached index2.html
+   77  git status
+   78  git commit -m "Remove txt"
+   79  git status
+   80  git commit -a -m "Remove txt"
+   81  git status
+   82  rm index2.html
+   83  git status
+   84  history
+root@nirmal:~/git-temp/myproject# nano simple.txt
+root@nirmal:~/git-temp/myproject# git add simple.txt
+root@nirmal:~/git-temp/myproject# git restore --staging simple.txt
+error: unknown option `staging'
+usage: git restore [<options>] [--source=<branch>] <file>...
+
+    -s, --source <tree-ish>
+                          which tree-ish to checkout from
+    -S, --staged          restore the index
+    -W, --worktree        restore the working tree (default)
+    --ignore-unmerged     ignore unmerged entries
+    --overlay             use overlay mode
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+root@nirmal:~/git-temp/myproject# git restore --staged simple.txt
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        simple.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git add simple.txt
+root@nirmal:~/git-temp/myproject# git commit -m "simple text"
+[master e88f06c] simple text
+ 1 file changed, 1 insertion(+)
+ create mode 100644 simple.txt
+root@nirmal:~/git-temp/myproject# git restore --committed simple.txt
+error: unknown option `committed'
+usage: git restore [<options>] [--source=<branch>] <file>...
+
+    -s, --source <tree-ish>
+                          which tree-ish to checkout from
+    -S, --staged          restore the index
+    -W, --worktree        restore the working tree (default)
+    --ignore-unmerged     ignore unmerged entries
+    --overlay             use overlay mode
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+root@nirmal:~/git-temp/myproject# nano .gitingore
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitingore
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+simple.txt
+root@nirmal:~/git-temp/myproject# rm .gitingore
+root@nirmal:~/git-temp/myproject# nano .gitignore
+root@nirmal:~/git-temp/myproject# git add .gitignore
+root@nirmal:~/git-temp/myproject# git commit -m "gitignore"
+[master e97079c] gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+root@nirmal:~/git-temp/myproject# git ls-files
+.gitignore
+index1.html
+simple.txt
+root@nirmal:~/git-temp/myproject# git log --oneline
+e97079c (HEAD -> master) gitignore
+e88f06c simple text
+9acc1b6 Remove txt
+557e44e Delete txt
+75a5406 First text file
+a2573fa modified first file
+228459c second file
+92719e8 first commit
+root@nirmal:~/git-temp/myproject# git revert 557e44e
+Auto-merging simple.txt
+CONFLICT (add/add): Merge conflict in simple.txt
+error: could not revert 557e44e... Delete txt
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+root@nirmal:~/git-temp/myproject# git revert 228459c
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+root@nirmal:~/git-temp/myproject# git log --oneline
+e97079c (HEAD -> master) gitignore
+e88f06c simple text
+9acc1b6 Remove txt
+557e44e Delete txt
+75a5406 First text file
+a2573fa modified first file
+228459c second file
+92719e8 first commit
+root@nirmal:~/git-temp/myproject# git reset a2573fa
+Unstaged changes after reset:
+D       index2.html
+root@nirmal:~/git-temp/myproject# git reset --hard a2573fa
+HEAD is now at a2573fa modified first file
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        simple.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git log --oneline
+a2573fa (HEAD -> master) modified first file
+228459c second file
+92719e8 first commit
+root@nirmal:~/git-temp/myproject# git reset --hard 92719e8
+HEAD is now at 92719e8 first commit
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        simple.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git add simple.txt
+root@nirmal:~/git-temp/myproject# git commit -m "messageg sim"
+[master 992bab6] messageg sim
+ 1 file changed, 5 insertions(+)
+ create mode 100644 simple.txt
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# rm .gitignore
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# git branch
+* master
+root@nirmal:~/git-temp/myproject# git branch B1 master
+root@nirmal:~/git-temp/myproject# git branch
+  B1
+* master
+root@nirmal:~/git-temp/myproject# git checkout branch
+error: pathspec 'branch' did not match any file(s) known to git
+root@nirmal:~/git-temp/myproject# git checkout branch B1
+error: pathspec 'branch' did not match any file(s) known to git
+error: pathspec 'B1' did not match any file(s) known to git
+root@nirmal:~/git-temp/myproject# git checkout B1
+Switched to branch 'B1'
+root@nirmal:~/git-temp/myproject# git brance
+git: 'brance' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+root@nirmal:~/git-temp/myproject# git branch
+* B1
+  master
+root@nirmal:~/git-temp/myproject# git --oneline log
+unknown option: --oneline
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+root@nirmal:~/git-temp/myproject# git log --oneline
+992bab6 (HEAD -> B1, master) messageg sim
+92719e8 first commit
+root@nirmal:~/git-temp/myproject# git brance
+git: 'brance' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+root@nirmal:~/git-temp/myproject# git branch
+* B1
+  master
+root@nirmal:~/git-temp/myproject# nano strange.txt
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+simple.txt
+root@nirmal:~/git-temp/myproject# git status
+On branch B1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        strange.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git add strange.txt
+root@nirmal:~/git-temp/myproject# git commit -m "Strange"
+[B1 e49f483] Strange
+ 1 file changed, 1 insertion(+)
+ create mode 100644 strange.txt
+root@nirmal:~/git-temp/myproject# git status
+On branch B1
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+simple.txt
+strange.txt
+root@nirmal:~/git-temp/myproject# git checkout master
+Switched to branch 'master'
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+simple.txt
+root@nirmal:~/git-temp/myproject# git merge B1 master
+Updating 992bab6..e49f483
+Fast-forward
+ strange.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 strange.txt
+root@nirmal:~/git-temp/myproject# git ls-files
+index1.html
+simple.txt
+strange.txt
+root@nirmal:~/git-temp/myproject# git branch
+  B1
+* master
+root@nirmal:~/git-temp/myproject# nano index4.html
+root@nirmal:~/git-temp/myproject# git checkout B1
+Switched to branch 'B1'
+root@nirmal:~/git-temp/myproject# nano index4.html
+root@nirmal:~/git-temp/myproject# git status
+On branch B1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index4.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git add index4.html
+root@nirmal:~/git-temp/myproject# git commit -m "Branch"
+[B1 95429b6] Branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index4.html
+root@nirmal:~/git-temp/myproject# git checkout master
+Switched to branch 'master'
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# nano index4.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index4.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@nirmal:~/git-temp/myproject# git add index4.html
+root@nirmal:~/git-temp/myproject# git commit -m "index4"
+[master d367ccc] index4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index4.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# git merge B1 master
+Auto-merging index4.html
+CONFLICT (add/add): Merge conflict in index4.html
+Automatic merge failed; fix conflicts and then commit the result.
+root@nirmal:~/git-temp/myproject# nano index4.html
+root@nirmal:~/git-temp/myproject# git merge B1 master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+root@nirmal:~/git-temp/myproject# git checkout B1
+index4.html: needs merge
+error: you need to resolve your current index first
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      index4.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@nirmal:~/git-temp/myproject# git commit -m "Message"
+U       index4.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+root@nirmal:~/git-temp/myproject# git merge B1 master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+root@nirmal:~/git-temp/myproject# git branch
+  B1
+* master
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      index4.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@nirmal:~/git-temp/myproject# nano index4.html
+root@nirmal:~/git-temp/myproject# git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      index4.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@nirmal:~/git-temp/myproject# git add index4.html
+root@nirmal:~/git-temp/myproject# git commit index4.html
+fatal: cannot do a partial commit during a merge.
+root@nirmal:~/git-temp/myproject# git merge --abort
+root@nirmal:~/git-temp/myproject# git commit index4.html
+On branch master
+nothing to commit, working tree clean
+root@nirmal:~/git-temp/myproject# git merge B1 master
+Auto-merging index4.html
+CONFLICT (add/add): Merge conflict in index4.html
+Automatic merge failed; fix conflicts and then commit the result.
+root@nirmal:~/git-temp/myproject# git merge --abort
+root@nirmal:~/git-temp/myproject# git checkout B1
+Switched to branch 'B1'
+root@nirmal:~/git-temp/myproject# nano index4.html
+root@nirmal:~/git-temp/myproject# git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        index4.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+root@nirmal:~/git-temp/myproject# git commit -m "Branch"
+On branch B1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index4.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@nirmal:~/git-temp/myproject# git add index4.html
+root@nirmal:~/git-temp/myproject# git commit -m "Branch"
+[B1 3b19eab] Branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+root@nirmal:~/git-temp/myproject# git checkout master
+Switched to branch 'master'
+root@nirmal:~/git-temp/myproject# git merge B1 master
+Merge made by the 'ort' strategy.
+root@nirmal:~/git-temp/myproject#
+Stash- This is for keeping a temp directory for Staged file to keep the directory clean for moving the files to prod
+
+Rebase- Its like merging but it will keep in order
